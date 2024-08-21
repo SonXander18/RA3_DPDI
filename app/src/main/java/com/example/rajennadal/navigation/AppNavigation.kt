@@ -10,6 +10,11 @@ import com.example.rajennadal.model.Personaje
 import com.example.rajennadal.ui.theme.DetallesPersonajesScreen
 import com.example.rajennadal.ui.theme.MenuScreen
 import com.example.rajennadal.ui.theme.ListaPersonajesScreen
+import com.example.rajennadal.ui.theme.AcercaDeScreen
+
+
+
+
 
 @Composable
 fun AppNavigation() {
@@ -33,6 +38,10 @@ fun AppNavigation() {
             selectedPersonaje.value?.let { personaje ->
                 DetallesPersonajesScreen(personaje = personaje, onSalir = { navController.popBackStack() })
             }
+        }
+        composable("acercaDe") {
+            AcercaDeScreen(navController = navController)
+
         }
     }
 }
